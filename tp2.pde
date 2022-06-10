@@ -5,7 +5,7 @@
 
 //VARIABLES CREACIÓN
 
-int i=0;
+int nana=0;
 
 // ASIGNACIÓN
 
@@ -25,11 +25,11 @@ void draw() {
 
   background (0);
 
-  for (i=0; i <40; i++) { 
+  for (nana=0; nana <40; nana++) { 
 
     translate(0, map (mouseX, mouseY, height, 0, 10)); 
 
-    if (i%3==0) fill(0, 0, 20);
+    if (nana%3==0) fill(0, 0, 20);
 
     else 
 
