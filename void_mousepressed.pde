@@ -8,7 +8,8 @@
 
 
 void mousePressed () {
-
+  contador = new SoundFile(this, "collect.wav");
+  contador.play();
   if ( estado.equals ("mainmenu")) {
 
     estado = "instrucciones";
@@ -16,17 +17,17 @@ void mousePressed () {
 
     estado = "elegirpersonaje";
   } else if ( estado.equals ("elegirpersonaje")) {
-
-    estado = "personajeplay";
+    pjselect();
   } else if ( estado.equals ("personajeplay")) {
-
     estado = "warning";
   } else if ( estado.equals ("warning")) {
 
     estado = "game";
   } else if ( estado.equals ("game")) {
-
-    estado = "perdiste";
   } else if ( estado.equals ("perdiste")) {
+  } else if (estado.equals("ganaste")) {
+    estado= "creditos";
+    } else if (estado.equals("creditos")) {
+    estado= "rt";
   }
 } 

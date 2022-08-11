@@ -1,3 +1,6 @@
+
+
+
 /* 
  
  TP3
@@ -24,26 +27,24 @@
 
 
 
+// ARRAY
+int[] potis = new int[5];
+int[] obj = new int[3];
+PImage[] animacion = new  PImage[8];
+
 
 
 
 // BOOLEAN
 
-boolean personaje1 = true;
+boolean personaje1;  
 
-boolean personajeb1 = false;
+boolean personaje2;
 
-boolean personaje2 = true;
+boolean personaje3;
 
-boolean personajeb2 = false;
+boolean personaje4;
 
-boolean personaje3 = true;
-
-boolean personajeb3 = false;
-
-boolean personaje4 = true;
-
-boolean personajeb4 = false;
 
 
 
@@ -95,6 +96,14 @@ PImage exit;
 
 PImage mouse;
 
+PImage ganaste;
+
+PImage perdisteee;
+
+PImage creditos;
+
+PImage rt;
+
 // VARIABLES DE CREACIÓN
 
 int pantalladeinicio;
@@ -117,11 +126,18 @@ int mov_03b = 0;
 
 int x = 400;
 
-int y = 340;
+int y = 320;
 
+int moverbruja = -200;
+int animarbruja=0;
+
+int agarradas= 0 ;
 int c=0;
 
-int pocion11 = 0;
+int movpot1;
+int movpot2;
+int movpot3;
+
 
 
 // -------------------------------------------------------------------------------------------------------------------------------------------
@@ -158,9 +174,11 @@ PImage pocion3;
 
 // -------------------------------------------------------------------------------------------------------------------------------------------
 
+// MUSICA !
 
+import processing.sound.*;
 
-
+SoundFile contador;
 
 void setup ()
 {
@@ -168,12 +186,10 @@ void setup ()
 
   estado = "mainmenu";
 
-  noCursor();
 
 
 
-
-// -------------------------------------------------------------------------------------------------------------------------------------------
+  // -------------------------------------------------------------------------------------------------------------------------------------------
 
 
   //cargar imagenes generales
@@ -192,6 +208,7 @@ void setup ()
 
   item_02 = loadImage ("item_02.png");
 
+  rt = loadImage ("rt.png");
   textmain = loadImage ("textmain.png");
 
   playy = loadImage ("playy.png");
@@ -216,12 +233,20 @@ void setup ()
 
   arboles2 = loadImage ("arboles 2.png");
 
+  perdisteee = loadImage("perdisteee.png");
+
+  creditos = loadImage ("creditos.png");
+
   mouse = loadImage ("mouse.png");
+  for (int i = 0; i<animacion.length; i++) {
+    animacion[i] = loadImage("ani"+i+".png");
+  }
+  ganaste = loadImage ("ganaste.png");
 
+  // DECLARACION DE PUNTOS DE INICIO
 
-
-
-
+  potis[0] = 100; 
+  potis[1] = 200;
 
 
 
